@@ -5,6 +5,7 @@
     height: 60vh;
     justify-content: center;
     align-items: center;
+    animation: animation-sign 2s forwards;
 }
 .div-login-signup{
     font-family: 'Noto Serif', Serif;
@@ -29,4 +30,14 @@
 }
 .make-login{
     color: #000000ef;
+}
+@keyframes animation-sign{
+    from{
+        margin-top: 200px;
+        opacity: 0;
+    }
+    to{
+        margin-top: 0;
+        opacity: 1;
+    }
 }

@@ -5,6 +5,7 @@
     height: 60vh;
     justify-content: center;
     align-items: center;
+    animation: animation-sign 2s forwards;
 }
 .div-login{
     font-family: 'Noto Serif', Serif;

@@ -22,9 +22,9 @@ const Root = () => {
     return (
         <Router>
             <Routes>
-                <Route path="/" exact element={<Search />} />
-                <Route path="/create" element={<Private Item={NewIdeaPage} />} />
-                <Route path="/loginIn" element={<SigninPage/>}/>
+                <Route path="/" exact element={<Search/>}/>
+                <Route path="/create" element={<NewIdeaPage/>} />
+                <Route path="/signin" element={<SigninPage/>}/>
                 <Route path="/signup" element={<SignupPage/>}/>
                 <Route path="/edit/:id" element={<NewIdeaFormPage />} />
                 <Route path="/view/:id" element={<ViewIdeaPage/>}/>

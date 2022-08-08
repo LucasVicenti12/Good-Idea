@@ -40,7 +40,7 @@ const Signup = () => {
                 <input type="email" placeholder="Confirm your email:" value={emailConf} onChange={(evt) => [setEmailConf(evt.target.value), setError("")]}/>
                 <input type="password" placeholder="Type a password:" value={senha} onChange={(evt) => [setSenha(evt.target.value), setError("")]}/>
                 <button className="btn-login" onClick={handleSignup}>Sign Up</button>
-                <p className="make-login">If you already have a ancount, <Link to="/loginIn" className="link">sign in</Link></p>
+                <p className="make-login">If you already have a ancount, <Link to="/signin" className="link">sign in</Link></p>
             </div>
             
         </div>  

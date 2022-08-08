@@ -1,0 +1,27 @@
+.div-header{
+    display: flex;
+    justify-content: space-between;
+    width: 90vw;
+    background-color: #028a5157;
+    border-radius: 20px;
+    color: #fff;
+    align-items: center;
+    font-family: 'Noto Serif', Serif;
+}
+.div-header__link{
+    text-decoration: none;
+    font-family: 'Noto Serif', Serif;
+    color: #fff;
+}
+.div-header__left{
+    display: flex;
+    align-items: center;
+    width: 20vw;
+    justify-content: space-around;
+}
+.div-header__right{
+    display: flex;
+    align-items: center;
+    width: 30vw;
+    justify-content: space-around;
+}
