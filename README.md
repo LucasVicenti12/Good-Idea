@@ -1,7 +1,13 @@
 # Good-Idea
 
-Ainda como forma de prática e treinamento, estou fazendo um site. Este tem como foco a pluralidade de ideias, onde os usuários poderão, por meio de blocos expor suas ideias,
-como um tipo, só que mais simples, de twitter. Com isso, outros usuários poderão ter acessos as estas ideias e participar das conversas.
-O conteúdo sera apresentado em forma de um title com nickname do criador da ideia e um subtexto para apresentar suas ideias - uma função a ser adicionada será a opção de
-adicionar um arquivo para ilustrar suas ideias - e posterior a isso, possuir os comentários para adicionar as sub-ideias para discussão.
+Still as a form of practice and training, I'm making an site. It's focus on plurality of ideas, where all users will be able to through blocks, express their ideas,
+as a type, so that simpler, of twitter. As such, other users will be able to access these ideas and participate in the conversations.
+The content will be presented in the form of a title with the nickname of the creator of the idea, and a subtext to present his ideas - a function to be added will be optional, is add a file to illustrate your ideas - and after that, have comments to add sub-ideas for discussion.
 
+#Technologies that I will use: <br>
+<li>HTML<li/>
+<li>CSS<li/>
+<li>JavaScript<li/>
+<li>React<li/>
+<li>Node<li/>
+<li>MongoDB - or an other database manager<li/>
