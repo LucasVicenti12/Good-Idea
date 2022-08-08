@@ -11,3 +11,4 @@ The content will be presented in the form of a title with the nickname of the cr
 <li>React</li>
 <li>Node</li>
 <li>MongoDB - or an other database manager</li>
+<img src="./src/components/images/main-screen.png">
