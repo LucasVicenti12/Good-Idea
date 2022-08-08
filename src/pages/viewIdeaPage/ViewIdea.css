@@ -1,0 +1,64 @@
+.div-view_main{
+    max-width: 900px;
+    margin: 10px auto;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: 'Noto Serif', serif;
+}
+.viewidea-view{
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    height: 86vh;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #07ac6db0;
+    text-align: center;
+}
+.idea{
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    border-radius: 20px;
+    background-color: #97d4ab59;
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.15);
+    text-align: left;
+    padding: 20px 20px;
+    word-wrap: break-word;
+}
+.btn-comment{
+    border-radius: 20px;
+    background-color: #07ac6db0;
+    border: none;
+    padding: 10px;
+    color: #fff;
+    font-family: 'Noto Serif', serif;
+}
+.btn-like{
+    border-radius: 50%;
+    background-color: #07ac6db0;
+    border: none;
+    background-image: url("../../components/images/love.png");
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+}
+.viewidea-footer{
+    display: flex;
+    justify-content: space-between;
+}
+.h1-title::after{
+    content: '';
+    display: block;
+    width: 70vw;
+    height: 2px;
+    background-color: #ffffff77;
+}
+.h2-text{
+    font-size: 18px;
+}

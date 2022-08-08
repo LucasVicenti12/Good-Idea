@@ -1,0 +1,57 @@
+.div-idea{
+    width: 70vw;
+    height: 100px;
+    margin-top: 20px;
+    background-color:  #93e4c9de;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.15);
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: animation-idea-box 0.5s forwards;
+}
+.div-idea:hover{
+    animation: animation-idea-hover 1s forwards;
+}
+.link{
+    text-decoration: none;
+}
+.div-title, .div-text{
+    color: #fff;
+    font-family: 'Noto Serif', serif;
+}
+.div-text{
+    width: 20vw;
+}
+.div-text p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.footer-idea{
+    align-self:flex-end;
+    position: relative;
+    bottom: 20px;
+}
+.footer-idea .link{
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Noto Serif', serif;
+}
+
+@keyframes animation-idea-hover{
+    to{
+        padding: 3%;
+    }
+}
+@keyframes animation-idea-box{
+    from{
+        margin-top: 30px;
+        opacity: 0;
+    }
+    to{
+        margin-top: 20px;
+        opacity: 1;
+    }
+}

@@ -1,0 +1,23 @@
+.idea-list{
+    margin-top: 20px;
+    width: 85vw;
+    background-color: #66CDAA;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: animation-list 2s forwards;
+    padding-bottom: 20px;
+}
+
+@keyframes animation-list{
+    from{
+        margin-top: 100px;
+        opacity: 0;
+    }
+    to{
+        margin-top: 20px;
+        opacity: 1;
+    }
+}

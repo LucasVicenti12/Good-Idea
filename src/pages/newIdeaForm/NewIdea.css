@@ -1,0 +1,87 @@
+.newideapage-create__idea{
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    height: 86vh;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #20b2abb0;
+    text-align: center;
+}
+.newideapage-main{
+    max-width: 800px;
+    margin: 10px auto;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: animation-newideamain 1s forwards;
+}
+.newideapage-title{
+    font-size: 1.3rem;
+    color: #fff;
+    font-family: 'Noto Serif', serif;
+}
+.newideapage-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+.newideapage-form__txtarea{
+    margin-top: 10px;
+    resize: none;
+    border-radius: 10px;
+    padding: 20px;
+    border: none;  
+}
+.newideapage-form__name{
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: none;
+}
+.newideapage-form__name, .newideapage-form__txtarea{
+    outline: none;
+}
+.newideapage-form__name, .newideapage-form__txtarea::placeholder{
+    font-family: 'Noto Serif', serif;
+}
+.ideapage-form__submit{
+    align-self: center;
+    margin-top: 25px;
+    width: 200px;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Noto Serif', serif;
+}
+.ideapage-form__submit:hover{
+    animation: animation-button 1s forwards;
+}
+.newideapage-form__graph{
+    margin-top: 10px;
+    font-size: 1em;
+    font-family: 'Noto Serif', serif;
+    color: #fff;
+}
+.ideapage-form__file{
+    font-family: 'Noto Serif', serif;
+    color: #fff;
+}
+
+@keyframes animation-button{
+    to{
+        padding: 15px;
+    }
+}
+@keyframes animation-newideamain{
+    from{
+        margin-top: 200px auto;
+        opacity: 0;
+    }
+    to{
+        margin-top: 30px;
+        margin: 10px auto;
+        opacity: 1;
+    }
+}
