@@ -1,0 +1,32 @@
+.div-main-signup{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 60vh;
+    justify-content: center;
+    align-items: center;
+}
+.div-login-signup{
+    font-family: 'Noto Serif', Serif;
+    color: #44b690ef;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 50vw;
+    height: 45vh;
+    justify-content: space-between;
+    align-items: center;
+}
+.div-login-signup input{
+    background-color: #4dcca294;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    width: 20em;
+}
+.div-login-signup input::placeholder{
+    color: #fff;
+}
+.make-login{
+    color: #000000ef;
+}
