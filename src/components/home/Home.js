@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import IdeaList from "../ideas/IdeasList/IdeaList";
-import NewIdea from "../newIdea/NewIdea";
-import "./Search.css"
+import IdeaList from "../ideas blocks/IdeasList/IdeaList";
+import NewIdea from "../new idea block/NewIdeaBlock";
+import "./Home.css"
 import axios from "axios"
 import HeaderPage from "../header/HeaderPage";
 
-const Search = () => {
+const Home = () => {
     const [posts, setposts] = useState([]);
     const [search, setSearch] = useState("");
 
@@ -31,4 +31,4 @@ const Search = () => {
     )
 }
 
-export default Search;
+export default Home;

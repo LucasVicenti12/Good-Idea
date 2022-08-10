@@ -16,12 +16,12 @@
 .div-header__left{
     display: flex;
     align-items: center;
-    width: 20vw;
+    width: 30vw;
     justify-content: space-around;
 }
 .div-header__right{
     display: flex;
     align-items: center;
-    width: 30vw;
+    width: 15vw;
     justify-content: space-around;
 }

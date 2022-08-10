@@ -1,8 +1,9 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import NewIdeaPage from "./NewIdea";
+import NewIdeaPage from "./IdeaForm";
+import HeaderPage from "../../components/header/HeaderPage";
 
-const NewIdeaFormPage = () => {
+const IdeaFormPage = () => {
     const {id} = useParams()
 
     return(
@@ -10,4 +11,4 @@ const NewIdeaFormPage = () => {
     )
 }
 
-export default NewIdeaFormPage;
+export default IdeaFormPage;

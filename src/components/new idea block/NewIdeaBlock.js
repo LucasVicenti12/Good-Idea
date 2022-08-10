@@ -1,5 +1,5 @@
 import React from "react";
-import "./NewIdea.css"
+import "./NewIdeaBlock.css"
 import { Link } from "react-router-dom";
 
 const NewIdea = () => {
