@@ -1,74 +1,45 @@
 import React, { createContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import {api, createSession} from "../services/api"
 
-export const AuthContext = createContext({});
+export const AuthContext = createContext();
 
-export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState();
+export const AuthProvider = ({children}) => {
+  const navigate = useNavigate(); 
+  const [user, setUser] = useState()
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const userToken = localStorage.getItem("user_token");
-    const usersStorage = localStorage.getItem("users_bd");
-
-    if (userToken && usersStorage) {
-      const hasUser = JSON.parse(usersStorage)?.filter(
-        (user) => user.email === JSON.parse(userToken).email
-      );
-
-      if (hasUser) setUser(hasUser[0]);
+    const recoveredUser = localStorage.getItem('user');
+    if(recoveredUser){
+      setUser(JSON.parse(recoveredUser));
     }
+    setLoading(false);
   }, []);
 
-  const signin = (email, password) => {
-    const usersStorage = JSON.parse(localStorage.getItem("users_bd"));
-
-    const hasUser = usersStorage?.filter((user) => user.email === email);
-
-    if (hasUser?.length) {
-      if (hasUser[0].email === email && hasUser[0].password === password) {
-        const token = Math.random().toString(36).substring(2);
-        localStorage.setItem("user_token", JSON.stringify({ email, token }));
-        setUser({ email, password });
-        return;
-      } else {
-        return "E-mail ou senha incorretos";
-      }
-    } else {
-      return "Usuário não cadastrado";
-    }
-  };
-
-  const signup = (email, password) => {
-    const usersStorage = JSON.parse(localStorage.getItem("users_bd"));
-
-    const hasUser = usersStorage?.filter((user) => user.email === email);
-
-    if (hasUser?.length) {
-      return "Já tem uma conta com esse E-mail";
-    }
-
-    let newUser;
-
-    if (usersStorage) {
-      newUser = [...usersStorage, { email, password }];
-    } else {
-      newUser = [{ email, password }];
-    }
-
-    localStorage.setItem("users_bd", JSON.stringify(newUser));
-
-    return;
-  };
-
-  const signout = () => {
-    setUser(null);
-    localStorage.removeItem("user_token");
-  };
-
-  return (
-    <AuthContext.Provider
-      value={{ user, signed: !!user, signin, signup, signout }}
-    >
+  const login = async (email, password) => {    
+    const response = await createSession(email, password)
+    console.log('login', response.data)
+    // criar session
+    const loggedUser = response.data.user
+    const token = response.data.token
+    localStorage.setItem("token", token)
+    localStorage.setItem("user", JSON.stringify(loggedUser))
+    api.defaults.headers.Autorization = `Bearer ${token}`
+    setUser(loggedUser)
+    navigate('/')     
+  }
+  const logout = () => {
+      console.log("logout")
+      localStorage.removeItem("user")
+      localStorage.removeItem("token")
+      setUser(null)
+      api.defaults.headers.Autorization = null
+      navigate('/signin')
+  }
+  return(
+    <AuthContext.Provider value={{authenticated: !!user, user, loading, login, logout}}>
       {children}
     </AuthContext.Provider>
-  );
-};
+  )
+}

@@ -25,3 +25,6 @@
     width: 15vw;
     justify-content: space-around;
 }
+.p-logout:hover{
+    cursor: pointer;
+}

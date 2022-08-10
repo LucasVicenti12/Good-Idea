@@ -1,34 +1,43 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import {
     BrowserRouter as Router,
     Routes,
-    Route
+    Route,
+    Navigate
 } from 'react-router-dom';
 import Home from "../components/home/Home"
 import IdeaFormPage from "./idea form page/IdeaFormPage";
 import ViewIdeaPage from "./view idea page/ViewIdeaPage";
-import Signin from "../components/signin/Signin";
-import useAuth from "../hooks/UserAuth";
 import SigninPage from "./Signin/Signin";
 import SignupPage from "./Signup/Signup"
+import { AuthProvider, AuthContext } from "../context/auth";
 
 const Root = () => {
-    
-    const Private = ({Item}) => {
-        const signed = useAuth();
-        return signed > 0 ? <Item /> : <Signin />
+    const Private = ({children}) => {
+        const {authenticated, loading} = useContext(AuthContext);
+
+        if(loading){
+            return <div className="loading">Loading...</div>
+        }
+
+        if(!authenticated){
+            return <Navigate to="/signin"/>
+        }
+        return children;
     }
 
     return (
         <Router>
-            <Routes>
-                <Route path="/" exact element={<Home/>}/>
-                <Route path="/create" element={<IdeaFormPage/>} />
-                <Route path="/signin" element={<SigninPage/>}/>
-                <Route path="/signup" element={<SignupPage/>}/>
-                <Route path="/edit/:id" element={<IdeaFormPage />}/>
-                <Route path="/view/:id" element={<ViewIdeaPage/>}/>
-            </Routes>
+            <AuthProvider>
+                <Routes>
+                    <Route exact path="/"  element={<Private><Home/></Private>}/>
+                    <Route exact path="/create" element={<Private><IdeaFormPage/></Private>} />
+                    <Route exact path="/signin" element={<SigninPage/>}/>
+                    <Route exact path="/signup" element={<SignupPage/>}/>
+                    <Route exact path="/edit/:id" element={<Private><IdeaFormPage /></Private>}/>
+                    <Route exact path="/view/:id" element={<Private><ViewIdeaPage/></Private>}/>
+                </Routes>
+            </AuthProvider>
         </Router>
     ); 
 }

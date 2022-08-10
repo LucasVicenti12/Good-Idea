@@ -4,9 +4,7 @@ import Root from "./pages/Root";
 
 const App = () => {
     return(
-        <AuthProvider>
-            <Root/>
-        </AuthProvider>
+        <Root/>
     )
 }
 
