@@ -1,0 +1,48 @@
+.div-main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 60vh;
+    justify-content: center;
+    align-items: center;
+    animation: animation-sign 2s forwards;
+}
+.div-login{
+    font-family: 'Noto Serif', Serif;
+    color: #44b690ef;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 50vw;
+    height: 50vh;
+    justify-content: space-between;
+    align-items: center;
+}
+.div-login input{
+    background-color: #4dcca294;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    width: 20em;
+}
+.div-login input::placeholder{
+    color: #fff;
+}
+.create-ancount{
+    color: #000000ef;
+}
+.btn-login{
+    background-color: #4dcca294;
+    color: #fff;
+    border: none;
+    padding: 7px;
+    border-radius: 20px;
+}
+.link{
+    text-decoration: none;
+    color: #44b690ef;
+}
+.lbl-error{
+    color: #d15131ef;
+    font-size: 15px;
+}

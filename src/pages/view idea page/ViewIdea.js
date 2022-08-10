@@ -14,16 +14,6 @@ const ViewIdea = ({id}) => {
         }
     })
 
-    function likeOnClick(){
-        let click = true
-        
-        if(click == true){
-            let color = '#ffffff77';
-            document.getElementById("btn-like").style = "background-color: #ffffff77;"
-        }
-        
-    }
-
     return(
         <div className="div-view_main">
             <div className="viewidea-view">
@@ -32,7 +22,10 @@ const ViewIdea = ({id}) => {
                     <h2 className="h2-text">{values.text}</h2>
                     <footer className="viewidea-footer">
                         <button className="btn-comment">Type your comment</button>
-                        <button className="btn-like" id="btn-like" onClick={likeOnClick}/>
+                        {/* <div className="btn-like">
+                            <input type="checkbox" value="1" id="btn-check"/>
+                            <label htmlFor="btn-check" />
+                        </div> */}
                     </footer>
                 </div>   
             </div>
