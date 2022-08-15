@@ -19,20 +19,19 @@ export const AuthProvider = ({children}) => {
 
   const login = async (email, password) => {    
     const response = await createSession(email, password)
-    console.log('login', response.data)
+    console.log('login data', response.data)
     // criar session
-    const loggedUser = response.data.user
+    const loggedUser = response.data.email
     const token = response.data.token
     localStorage.setItem("token", token)
     localStorage.setItem("user", JSON.stringify(loggedUser))
-    api.defaults.headers.Autorization = `Bearer ${token}`
     setUser(loggedUser)
     navigate('/')     
   }
   const logout = () => {
       console.log("logout")
       localStorage.removeItem("user")
-      localStorage.removeItem("token")
+      localStorage.removeItem("id")
       setUser(null)
       api.defaults.headers.Autorization = null
       navigate('/signin')

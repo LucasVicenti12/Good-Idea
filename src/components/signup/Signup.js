@@ -1,39 +1,37 @@
+import axios from "axios";
 import React, { useState } from "react";
+import * as yup from "yup"
+import {ErroMenssage, Formik, Form, Field} from "formik"
 import { Link, useNavigate } from "react-router-dom";
 import "./Signup.css"
 
+
 const Signup = () => {
-    const [email, setEmail] = useState("");
-    const [emailConf, setEmailConf] = useState("");
-    const [senha, setSenha] = useState("");
-    const [error, setError] = useState("");
-    const navigate = useNavigate();
 
-    const handleSignup = () => {
-        if (!email | !emailConf | !senha) {
-            setError("Preencha todos os campos");
-            return;
-        } else if (email !== emailConf) {
-            setError("Os e-mails não são iguais");
-            return;
-        }
-
-        alert("Usuário cadatrado com sucesso!");
-        navigate("/");
-    };
+    const handleRegister = (values) => {
+        axios.post("http://localhost:4001/register", {
+          email: values.email,
+          password: values.password,
+        }).then((response) => {
+          alert(response.data.msg);
+          console.log(response);
+        });
+      };
 
     return(
-        <div className="div-main-signup">
-            <div className="div-login-signup">
-                <h1>Goodness - Sign up</h1>
-                <input type="email" placeholder="Type your email:" value={email} onChange={(evt) => [setEmail(evt.target.value)]}/>
-                <input type="email" placeholder="Confirm your email:" value={emailConf} onChange={(evt) => [setEmailConf(evt.target.value)]}/>
-                <input type="password" placeholder="Type a password:" value={senha} onChange={(evt) => [setSenha(evt.target.value)]}/>
-                <button className="btn-login" onClick={handleSignup}>Sign Up</button>
-                <p className="make-login">If you already have a ancount, <Link to="/signin" className="link">sign in</Link></p>
-            </div>
-            
-        </div>  
+        <div>
+            <Formik className="div-main-signup"
+                initialValues = {{}}
+                onSubmit={handleRegister}>
+                <Form className="div-login-signup">
+                    <h1>Goodness - Sign up</h1>
+                    <Field placeholder="Type your email:" name="email"/>
+                    <Field placeholder="Type a password:" name="password"/>
+                    <Field placeholder="Confirm your password:" name="confirmation"/>
+                    <button type="submit" className="btn-login">Sign Up</button>
+                </Form>
+            </Formik>  
+        </div>
     )
 }
 export default Signup;
