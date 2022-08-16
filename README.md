@@ -11,5 +11,5 @@ The content will be presented in the form of a title with the nickname of the cr
 <li>React</li>
 <li>Node</li>
 <li>MySql</li>
-<img src="./src/components/assets/main-screen.png">
 <br><br><br>
+<img src="./src/components/assets/main-screen.png">
