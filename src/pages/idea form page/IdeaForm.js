@@ -12,9 +12,13 @@ const NewIdeaPage = ({id}) => {
     const [values, setValues] = useState(initialValue);
     const navigate = useNavigate();
 
+    function handleDeleteClick(){
+        axios.delete(`http://192.168.1.100:4000/posts/${id}`).then((response) => {navigate('/')});
+    }
+
     useEffect(() => {
         if(id){
-            axios.get(`http://localhost:4000/posts/${id}`)
+            axios.get(`http://192.168.1.100:4000/posts/${id}`)
             .then((response) => {
                 setValues(response.data)
             })           
@@ -30,8 +34,8 @@ const NewIdeaPage = ({id}) => {
         ev.preventDefault();
         const method = id ? 'put' : 'post';
         const url = id
-            ? `http://localhost:4000/posts/${id}`
-            : 'http://localhost:4000/posts'
+            ? `http://192.168.1.100:4000/posts/${id}`
+            : 'http://192.168.1.100:4000/posts'
         axios[method](url, values).then((response) => {navigate('/')});
     }
 
@@ -45,6 +49,7 @@ const NewIdeaPage = ({id}) => {
                     <p className="newideapage-form__graph">Do you want introduce an explanation document?</p>
                     {/* <input type="file" className="ideapage-form__file"/> */}
                     <button type="submit" className="ideapage-form__submit">Let's show to the world!</button>
+                    {id ? ( <button onClick={handleDeleteClick} className="ideapage-form__submit">Delete</button>) : null}
                 </form>
             </div>
         </div>

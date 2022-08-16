@@ -5,7 +5,6 @@ import Signin from "../../components/signin/Signin";
 const SigninPage = () => {
     return (
         <div className="div-main">
-            <HeaderPage />
             <Signin />  
         </div>
     )

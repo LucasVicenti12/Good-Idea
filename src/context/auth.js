@@ -1,6 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {api, createSession} from "../services/api"
 
 export const AuthContext = createContext();
 
@@ -17,12 +16,10 @@ export const AuthProvider = ({children}) => {
     setLoading(false);
   }, []);
 
-  const login = async (email, password) => {    
-    const response = await createSession(email, password)
-    console.log('login data', response.data)
-    // criar session
-    const loggedUser = response.data.email
-    const token = response.data.token
+  const login = async (email) => {    
+    
+    const loggedUser = email
+    const token = Math.random().toString(36).substring(2);
     localStorage.setItem("token", token)
     localStorage.setItem("user", JSON.stringify(loggedUser))
     setUser(loggedUser)
@@ -33,7 +30,6 @@ export const AuthProvider = ({children}) => {
       localStorage.removeItem("user")
       localStorage.removeItem("id")
       setUser(null)
-      api.defaults.headers.Autorization = null
       navigate('/signin')
   }
   return(

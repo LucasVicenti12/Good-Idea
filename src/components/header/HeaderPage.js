@@ -11,13 +11,8 @@ const HeaderPage = () => {
 
     return(
         <div className="div-header">
-            <div className="div-header__left">
-                <Link to="/" className="div-header__link">Home</Link>
-                <Link to="/signin" className="div-header__link">Login</Link>
-            </div>
-            <div className="div-header__right">
-                <p onClick={handleLogout} className="p-logout">Sign out</p>
-            </div>
+            <Link to="/" className="div-header__link">Home</Link>
+            <p onClick={handleLogout} className="p-logout">Sign out</p>        
         </div>
     )
 }

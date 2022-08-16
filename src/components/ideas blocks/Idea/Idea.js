@@ -1,6 +1,8 @@
+import axios from "axios";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Idea.css"
+
 
 const Idea = ({post}) => {
     
@@ -14,6 +16,7 @@ const Idea = ({post}) => {
                     <p>{post.text}</p>
                 </div>
                 <footer className="footer-idea">
+                    {/*  */}
                     <Link to={`/edit/${post.id}`} className="link">Edit Idea</Link>
                 </footer>
             </div>

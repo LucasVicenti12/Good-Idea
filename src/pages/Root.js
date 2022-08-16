@@ -5,11 +5,11 @@ import {
     Route,
     Navigate
 } from 'react-router-dom';
-import Home from "../components/home/Home"
 import IdeaFormPage from "./idea form page/IdeaFormPage";
 import ViewIdeaPage from "./view idea page/ViewIdeaPage";
 import SigninPage from "./Signin/Signin";
 import SignupPage from "./Signup/Signup"
+import HomePage from "./Home/home";
 import { AuthProvider, AuthContext } from "../context/auth";
 
 const Root = () => {
@@ -30,7 +30,7 @@ const Root = () => {
         <Router>
             <AuthProvider>
                 <Routes>
-                    <Route exact path="/"  element={<Private><Home/></Private>}/>
+                    <Route exact path="/"  element={<Private><HomePage/></Private>}/>
                     <Route exact path="/create" element={<Private><IdeaFormPage/></Private>} />
                     <Route exact path="/signin" element={<SigninPage/>}/>
                     <Route exact path="/signup" element={<SignupPage/>}/>

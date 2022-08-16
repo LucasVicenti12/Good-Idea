@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import "./ViewIdea.css"
+
 
 const ViewIdea = ({id}) => {
     const [values, setValues] = useState('')

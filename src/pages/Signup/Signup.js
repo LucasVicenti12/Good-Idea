@@ -5,7 +5,6 @@ import HeaderPage from "../../components/header/HeaderPage";
 const SignupPage = () => {
     return(
         <div className="div-main">
-            <HeaderPage/>
             <Signup />
         </div> 
     )
