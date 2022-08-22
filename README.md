@@ -10,5 +10,6 @@ The content will be presented in the form of a title with the nickname of the cr
 <li>JavaScript</li>
 <li>React</li>
 <li>Node</li>
-<li>MongoDB - or an other database manager</li>
+<li>MySql</li>
+<br><br>
 <img src="./src/components/assets/main-screen.png">
