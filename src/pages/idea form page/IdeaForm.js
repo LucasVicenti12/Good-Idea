@@ -13,12 +13,12 @@ const NewIdeaPage = ({id}) => {
     const navigate = useNavigate();
 
     function handleDeleteClick(){
-        axios.delete(`http://192.168.1.100:4000/posts/${id}`).then((response) => {navigate('/')});
+        axios.delete(`http://localhost:4000/posts/${id}`).then((response) => {navigate('/')});
     }
 
     useEffect(() => {
         if(id){
-            axios.get(`http://192.168.1.100:4000/posts/${id}`)
+            axios.get(`http://localhost:4000/posts/${id}`)
             .then((response) => {
                 setValues(response.data)
             })           
@@ -34,8 +34,8 @@ const NewIdeaPage = ({id}) => {
         ev.preventDefault();
         const method = id ? 'put' : 'post';
         const url = id
-            ? `http://192.168.1.100:4000/posts/${id}`
-            : 'http://192.168.1.100:4000/posts'
+            ? `http://localhost:4000/posts/${id}`
+            : 'http://localhost:4000/posts'
         axios[method](url, values).then((response) => {navigate('/')});
     }
 

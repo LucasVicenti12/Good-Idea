@@ -16,7 +16,6 @@ const Idea = ({post}) => {
                     <p>{post.text}</p>
                 </div>
                 <footer className="footer-idea">
-                    {/*  */}
                     <Link to={`/edit/${post.id}`} className="link">Edit Idea</Link>
                 </footer>
             </div>

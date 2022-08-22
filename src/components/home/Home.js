@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import IdeaList from "../ideas blocks/IdeasList/IdeaList";
-import NewIdea from "../new idea block/NewIdeaBlock";
+import NewIdeaBlock from "../new idea block/NewIdeaBlock";
 import "./Home.css"
 import axios from "axios"
 import HeaderPage from "../header/HeaderPage";
@@ -22,10 +22,8 @@ const Home = () => {
     return(
         <div className="search-main__page">
             <HeaderPage />
-            <div className="search-title__page">
-                <h1 className="search-title_to_page">GoodNess Idea!</h1>
-            </div>
-            <NewIdea/>
+            <h1 className="search-title_to_page">GoodNess Idea!</h1>
+            <NewIdeaBlock/>
             <IdeaList posts={posts}/>
         </div>
     )

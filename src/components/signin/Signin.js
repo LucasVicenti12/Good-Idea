@@ -10,7 +10,7 @@ const Signin = () => {
     const {login} = useContext(AuthContext)
     const navigate = useNavigate();
     const handleLogin = (values) => {
-        axios.post("http://192.168.1.100:5000/login", {
+        axios.post("http://localhost:5000/login", {
             email: values.email,
             password: values.password
         }).then((response) => {

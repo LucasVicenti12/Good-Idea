@@ -8,7 +8,7 @@ const ViewIdeaPage = () => {
     const {id} = useParams();
 
     return(
-        <div className="div-main">
+        <div className="div-view-main">
             <HeaderPage/>
             <ViewIdea id={id ? Number.parseInt(id, 10) : null} /> 
         </div>

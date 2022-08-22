@@ -1,6 +1,5 @@
 .div-idea{
     width: 70vw;
-    height: 100px;
     margin-top: 20px;
     background-color:  #93e4c9de;
     border-radius: 20px;
@@ -8,14 +7,10 @@
     padding: 10px 30px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     animation: animation-idea-box 0.5s forwards;
 }
 .div-idea:hover{
     animation: animation-idea-hover 1s forwards;
-}
-.link{
-    text-decoration: none;
 }
 .div-title, .div-text{
     color: #fff;

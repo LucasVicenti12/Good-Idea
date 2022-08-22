@@ -10,7 +10,7 @@ const Signup = () => {
   const navigate = useNavigate();
 
     const handleRegister = (values) => {
-        axios.post("http://192.168.1.100:5000/register", {
+        axios.post("http://localhost:5000/register", {
           email: values.email,
           password: values.password,
         }).then((response) => {

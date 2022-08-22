@@ -1,6 +1,5 @@
 .newIdea-box{
     width: 95vw;
-    height: 20vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,6 +19,7 @@
     text-decoration: none; 
     font-size: 2rem;    
     margin-top: 10px;
+    margin-bottom: 30px;
 }
 .newIdea-box__create_idea:hover::after{
     content: "";
